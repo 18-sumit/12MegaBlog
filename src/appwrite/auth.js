@@ -64,4 +64,4 @@ export class AuthService {   // This defines a class named AuthService that will
 
 const authService = new AuthService()
 
-export default authService()
+export default authService
