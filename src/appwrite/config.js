@@ -1,4 +1,3 @@
-import { retry } from "@reduxjs/toolkit/query";
 import conf from "../conf/conf";
 import { Client, ID, Databases, Storage, Query } from "appwrite";
 
