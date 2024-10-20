@@ -8,7 +8,7 @@ function Header() {
 
     const authStatus = useSelector((state) => state.auth.status)
     const navigate = useNavigate()
-    const naItems = [
+    const navItems = [
         {
             name: 'Home',
             slug: '/',
@@ -40,22 +40,32 @@ function Header() {
         <header className='py-3 shadow bg-gray-500' >
             <Container >
                 <nav className='flex'>
-                    <div className=' mr-4'>
+                    // 1st part if header
+                    <div className=' mr-4'> // for logo
                         <Link to='/'>
-                            <Logo   width='70px' />
+                        // link does not reload page , it prevents the default behaviour of anchor tag which reloads the page.
+                            <Logo width='70px' />
                         </Link>
                     </div>
-                    <ul  className='flex ml-auto'>
-                        {naItems.map((item) => 
-                        item.active ? (
-                            <li key={item.name}>
-                                <button onClick={() => navigate(item.slug)}
-                                    className = 'inline-block px-6 py-2 duration-200 hover:bg-blue-100 rounded-full'
-                                    >{item.name}</button>
-                            </li>
-                        ) : null
+                    // Header divided into 2 parts , 1st  part contains logout button and 2nd part contains navItems
+
+                    // 2nd  part of header
+
+                    <ul className='flex ml-auto'>
+                        {navItems.map((item) =>
+                            item.active ? (
+                                <li key={item.name}>
+                                    <button onClick={() => navigate(item.slug)}
+                                    className='inline-bock px-6 py-2 duration-200 hover:bg-blue-100 rounded-full'
+                                    >
+                                        {item.name}</button>
+                                </li> // use key there only where the html element is repeated
+                            ) : null
+                            // if active then do the 1sy setting else 2nd 
+
                         )}
-                        {authStatus && (
+                        {authStatus && ( //  if authStatus is true then show logout button else show login/signup button
+
                             <li>
                                 <LogoutBtn />
                             </li>
