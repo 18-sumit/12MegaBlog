@@ -9,6 +9,7 @@ function Button({
     textColor = 'text-white',
     className = '', // empty because , what if user have to pass any className then from here we can take it 
     ...props
+
     // this is props , if user have passed any other properties like style , value , id or anything  else then it will be here 
     // and then using spread operator all those properties will be here 
 
