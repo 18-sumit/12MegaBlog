@@ -40,16 +40,17 @@ function Header() {
         <header className='py-3 shadow bg-gray-500' >
             <Container >
                 <nav className='flex'>
-                    // 1st part if header
-                    <div className=' mr-4'> // for logo
+{/*                    1st part if header
+*/}                    <div className=' mr-4'> 
+                        {/* for logo
+                        link does not reload page , it prevents the default behaviour of anchor tag which reloads the page.*/}
                         <Link to='/'>
-                        // link does not reload page , it prevents the default behaviour of anchor tag which reloads the page.
                             <Logo width='70px' />
                         </Link>
                     </div>
-                    // Header divided into 2 parts , 1st  part contains logout button and 2nd part contains navItems
-
-                    // 2nd  part of header
+{                    /* Header divided into 2 parts , 1st  part contains logout button and 2nd part contains navItems*/}                    
+                        
+                        {/* 2nd  part of header*/}
 
                     <ul className='flex ml-auto'>
                         {navItems.map((item) =>
