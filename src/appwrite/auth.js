@@ -53,9 +53,9 @@ export class AuthService {   // This defines a class named AuthService that will
         await this.account.deleteSessions()
 
         try {
-            
+            await  this.account.deleteSession();
         } catch (error) {
-            throw error;
+            console.log("Appwrite Service :: logout :: error" , error);
         }
     }
 
