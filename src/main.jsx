@@ -1,11 +1,11 @@
-import { Children, StrictMode } from 'react'
+import {StrictMode } from 'react'
+import ReactDOM from 'react-dom/client';
 import App from './App.jsx'
 import './index.css'
 import { Provider } from 'react-redux'
 import store from './store/store.js'
-import ReactDOM from 'react-dom/client';
-import { AuthLayout } from './components/index.js'
 import { RouterProvider , createBrowserRouter } from 'react-router-dom'
+import { AuthLayout } from './components/index.js'
 
 
 import AddPost  from './components/pages/AddPost.jsx'
@@ -29,7 +29,8 @@ const router = createBrowserRouter([
       {
         path: '/login',
         element: (
-          <AuthLayout authentication={false}> // to make sure that we don't bypass the routes manually even without login
+          <AuthLayout authentication={false}> 
+           {/* to make sure that we don't bypass the routes manually even without login */}
             <Login />
           </AuthLayout>
         ),
@@ -43,7 +44,7 @@ const router = createBrowserRouter([
         ),
       },
       {
-        path: '/all-post',
+        path: '/all-posts',
         element: (
           <AuthLayout authentication >
             <AllPosts />
@@ -51,7 +52,7 @@ const router = createBrowserRouter([
         ),
       },
       {
-        path: '/addpost',
+        path: '/add-post',
         element: (
           <AuthLayout authentication>
             {" "}
