@@ -7,7 +7,8 @@ function PostCard({$id , title , featuredImage}) {
   // since we are using appwrite , they have syntax of writing id in $id
   
   return (
-    <Link to ={`/post/${$id}`}> // to means href here
+    // to means href here
+    <Link to ={`/post/${$id}`}> 
         <div className='w-full bg-gray-100 rounded-xl p-4'>
           <div className='w-full justify-center mb-4'>
             <img src = {appwriteService.getFilePreview(featuredImage)} alt={title} className='rounded-xl' />
