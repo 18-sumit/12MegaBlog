@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { useNavigate } from 'react-router-dom'
 import { login as authLogin } from '../store/authSlice'
-import { Button, Input, Logo } from '../components'
+import { Button, Input, Logo } from '../components/index'
 import { useDispatch } from 'react-redux'
 import authService from '../appwrite/auth'
 import { useForm } from 'react-hook-form'
@@ -20,9 +20,11 @@ function Login() {
             const session = await authService.login(data)
             if (session) {
                 const userData = await authService.getCurrentUser()
-                if (userData) dispatch(authLogin(userData)); // authLogin beacause we imported it as  authLogin from store
-                navigate('/')  // redirect to home page
-                // diff b/w link and navigate is link works onclicking 
+                {/*authLogin beacause we imported it as  authLogin from store*/}
+                if (userData) dispatch(authLogin(userData)); 
+                {/*redirect to home page*/}
+                navigate('/') 
+                {/*diff b/w link and navigate is link works onclicking */}
             }
         } catch (error) {
             setError(error.message)
