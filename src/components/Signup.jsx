@@ -2,7 +2,9 @@ import React, { useState } from 'react'
 import authService from '../appwrite/auth'
 import { Link, useNavigate } from 'react-router-dom'
 import login from '../store/authSlice'
-import { Button, Input, Logo } from '../components'
+import { Button, Input, Logo, Select } from '../components/index'
+// import { Input } from '../components/Input'
+// import Logo from '../components/Logo'
 import { useDispatch } from 'react-redux'
 import { useForm } from 'react-hook-form'
 
@@ -10,10 +12,14 @@ function Signup() {
     const navigate = useNavigate()
     const dispatch = useDispatch()
     const [error, setError] = useState("")
-    const [register, handleSubmit] = useForm()
+    const { register, handleSubmit } = useForm()
 
     const signup = async (data) => {
-        setError("") // empty out the errors
+        console.log("Signup function  called with data :", data)
+
+
+        {/*empty out the errors:*/}
+        setError("") 
         try {
             const userData = await authService.createAccount(data)
             if (userData) {
@@ -57,21 +63,21 @@ function Signup() {
                                 required: true
                             })}
                         />
-                        // email input
+                        {/* email input */}
                         <Input
                             label="Email :"
                             placeholder="Enter your email"
                             {...register("email", {
                                 required: true,
                                 validate: {
-                                    matchpattern: (value) => /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/.
+                                    matchPattern: (value) => /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/.
                                         test(value) ||
                                         "Email address must be a valid address",
                                 }
 
                             })}
                         />
-                         // password input
+                        {/* password input */}
                         <Input
                             label="Password :"
                             placeholder="Enter your password"
@@ -79,7 +85,7 @@ function Signup() {
                                 required: true,
                             })}
                         />
-                        <Button type="submit"  className="w-full"> Signn up </Button>
+                        <Button type="submit" className="w-full"> Sign up </Button>
                     </div>
                 </form>
             </div>
