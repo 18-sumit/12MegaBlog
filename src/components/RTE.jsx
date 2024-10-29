@@ -2,6 +2,7 @@ import React from 'react'
 import { Editor } from '@tinymce/tinymce-react'
 import { Controller } from 'react-hook-form'
 
+
 export default function RTE({ name, control, label, defaultValue = "" }) {
     // control is from react hook form , control is used to register inputs and handle their state.
     // It helps connect your custom components with React Hook Form’s internal logic. 
@@ -16,7 +17,7 @@ export default function RTE({ name, control, label, defaultValue = "" }) {
                 control={control}
                 render={({ field: { onChange } }) => (
                     <Editor
-                        apiKey='q7r28ed4rhsh7xz4pkdcqjt43nsywby8b69pvigahn7o52tl'
+                        apiKey={import.meta.env.VITE_APPWRITE_TINYMCE_API}
                         initialValue={defaultValue}
                         init={{
                             initialValue: defaultValue,
