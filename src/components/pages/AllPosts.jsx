@@ -10,7 +10,7 @@ function AllPosts() {
     
 
     useEffect(() => {
-        service.getAllPosts().then((posts) => {
+        service.getPosts().then((posts) => {
             if (posts) {
                 setPosts(posts.documents)
             } else {
