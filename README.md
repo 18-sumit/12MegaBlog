@@ -1,8 +1,66 @@
-# React + Vite
+MegaBlog - A Blogging Platform
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+MegaBlog is a feature-rich blogging application built using React and integrated with Appwrite for authentication. It allows users to create, edit, and view blog posts. This platform is ideal for individuals or teams looking to share ideas and content in a structured blog format.
 
-Currently, two official plugins are available:
+Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+User Authentication: Secure login and registration with Appwrite.
+
+Create and Edit Posts: Users can add, edit, and delete posts.
+
+Rich Text Editor: Enhanced post formatting capabilities for better user experience.
+
+Tech Stack
+
+Frontend: React, Tailwind CSS
+
+Backend: Appwrite (for user authentication)
+
+Build Tool: Vite
+
+
+Setup and Installation
+
+1. Clone the Repository
+
+git clone https://github.com/18-sumit/MegaBlog.git
+cd MegaBlog
+
+
+2. Install Dependencies
+
+npm install
+
+
+3. Configure Environment Variables
+
+Create a .env file in the root directory and populate it using .env.sample for guidance. Ensure you have the Appwrite credentials set up for authentication.
+
+
+4. Run the Application
+
+npm run dev
+
+Your app will be available at http://localhost:3000.
+
+
+
+Project Structure
+
+src/components: Contains reusable components like buttons, input fields, and layout components.
+
+src/pages: Includes pages such as Home, Login, Signup, AddPost, and EditPost.
+
+src/store: Contains the Redux slices for managing application state.
+
+public/: Holds static assets.
+
+
+Usage
+
+Create an Account: Register as a new user.
+
+Write and Publish Posts: Use the editor to write your content and publish it.
+
+Edit Existing Posts: Update content or delete posts as needed.
+
